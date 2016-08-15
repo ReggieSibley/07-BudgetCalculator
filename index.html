@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Calculator</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body ng-app="myApp" ng-controller = "mainCtrl">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="panel panel-success">
+                    <div class="panel-heading">Income Entries</div>
+                    <form>
+                        <input type="text" name="description1" class="form-control" placeholder="Description" ng-model="task.description1">
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" name="amount1" class="form-control" placeholder="Amount" ng-model="task.amount1">
+                            <br>
+                        </div>
+                        <button class="btn btn-success" ng-click="addTask()"><b>+ Add Income</b></button>
+                    </form>
+                    <table class="table">
+                        <tr>
+                            <th>Description</th>
+                            <th id="textalign">Amount</th>
+                        </tr>
+                        <tr ng-repeat="info in tasklist">
+                        	<td>{{info.description1}}</td>
+                        	<td id="textalign">{{info.amount1}}</td>
+
+
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-danger">
+                    <div class="panel-heading">Expense Entries</div>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Description" ng-model="task2.description2">
+                        <br>
+                        <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input type="text" class="form-control" placeholder="Amount" ng-model="task2.amount2">
+                            <br>
+                        </div>
+                        <button class="btn btn-danger" ng-click="addTask2()"><b>+ Add Expense</b></button>
+                    </form>
+                    <table class="table">
+                        <tr>
+                            <th>Description</th>
+                            <th id="textalign">Amount</th>
+                        </tr>
+                        <tr ng-repeat = "item in tasklist2">
+                        	<td>{{item.description2}}</td>
+                        	<td id="textalign">{{item.amount2}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="summary">
+                <div class="panel panel-info">
+                    <div class="panel-heading">Summary</div>
+                    <table class="table">
+                        <tr>
+                            <td>Total Income</td>
+                            <td id="textalign">Total Expense</td>
+                        </tr>
+                        <tr>
+                        	<td>{{totalInc | currency}}</td>
+                        	<td id="textalign">{{totalInc2 | currency}}</td>
+                        </tr>
+                        <tr>
+                            <tr>
+                            		<td></td>                        
+                                <td colspan="2" class="text-center">Left After Spending</td>
+
+                                <td></td>
+                            </tr>
+                            <tr>
+                            		<td colspan="2" class="text-center">{{totalleft | currency}}</td>
+                            
+                            </tr>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

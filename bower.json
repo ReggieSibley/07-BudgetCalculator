@@ -1,0 +1,18 @@
+{
+  "name": "07-BudgetCalculator",
+  "homepage": "index.html",
+  "description": "calculator that determines your budget",
+  "main": "index.html",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "1.9.1 - 3"
+  }
+}

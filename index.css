@@ -1,0 +1,23 @@
+.btn{
+	margin-top: 40px;
+	width:100%;
+}
+
+#summary {
+
+	padding-left: 200px;
+	padding-right:200px;
+
+}
+
+#textalign {
+
+	float: right;
+
+}
+
+#afterspending {
+
+	text-align: center;
+}
+
